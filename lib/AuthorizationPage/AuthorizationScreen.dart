@@ -106,10 +106,6 @@ class __SignInFormState extends State<_SignInForm> {
                   fontFamily: 'Roboto',
                   cursorColor: Color(0xFFFFFFFF),
                   hintColor: Color(0xFFFFFFFF),
-                  textTheme: TextTheme(
-                    bodyText1:
-                        TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
-                  ),
                 ),
                 child: Stack(
                   alignment: AlignmentDirectional.center,
@@ -175,8 +171,9 @@ class __SignInFormState extends State<_SignInForm> {
                     ),
                     Positioned(
                       bottom: 39,
+                      left: 76,
+                      right: 76,
                       child: Container(
-                        width: 262,
                         height: 65,
                         child: RaisedButton(
                           color: Color(0xFF333333),

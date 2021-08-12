@@ -4,11 +4,10 @@ import 'package:test_task/DetailedQuotePage/services/WeatherService.dart';
 import 'DetailedQuoteEvent.dart';
 import 'DetailedQuoteState.dart';
 
-
 class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
   final String city;
 
-  WeatherBloc(this.city) : super(null) {
+  WeatherBloc(this.city) : super(WeatherInitial()) {
     add(WeatherRequested(city: city));
   }
 
@@ -20,7 +19,7 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
         final Weather weather =
             await WeatherService.fetchCurrentWeather(city: event.city);
         yield WeatherLoadSuccess(weather: weather);
-      } catch (_) {
+      } catch (e) {
         yield WeatherLoadFailure();
       }
     }

@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:test_task/DetailedQuotePage/models/Weather.dart';
 
 class WeatherService {
-  static String _apiKey = "";
+  static String _apiKey = "6fa0cbe23f4ed65a33ad048421e26dc0";
 
   static Future<Weather> fetchCurrentWeather({city}) async {
     var url =
