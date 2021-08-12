@@ -4,11 +4,11 @@ import 'package:test_task/AuthorizationPage/AuthorizationScreen.dart';
 import 'package:test_task/AuthorizationPage/bloc/auth/AuthBloc.dart';
 import 'package:test_task/AuthorizationPage/bloc/auth/AuthEvent.dart';
 import 'package:test_task/HomePage/HomeScreen.dart';
-import 'package:test_task/assets/UserSession.dart';
+import 'package:test_task/resources/UserSession.dart';
 import 'AuthorizationPage/bloc/auth/AuthState.dart';
 import 'AuthorizationPage/services/AuthService.dart';
-import 'assets/UserSession.dart';
-export 'assets/UserSession.dart';
+import 'resources/UserSession.dart';
+export 'resources/UserSession.dart';
 
 Future<void> main() async {
 
@@ -27,7 +27,7 @@ Future<void> main() async {
               RepositoryProvider.of<AuthenticationService>(context);
               return AuthenticationBloc(authService)..add(AppLoaded());
             },
-          )
+          ),
         ],
         child: MyApp(),
       )));

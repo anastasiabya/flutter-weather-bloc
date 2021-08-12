@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_task/DetailedQuotePage/DetailedQuoteScreen.dart';
-import 'package:test_task/assets/Constants.dart';
+import 'package:test_task/resources/Constants.dart';
 
 class QuoteListPage extends StatelessWidget {
   Widget build(BuildContext context) {

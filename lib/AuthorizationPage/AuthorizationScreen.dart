@@ -6,17 +6,17 @@ import 'package:test_task/AuthorizationPage/bloc/auth/AuthState.dart';
 import 'package:test_task/AuthorizationPage/bloc/login/LoginEvent.dart';
 import 'package:test_task/AuthorizationPage/bloc/login/LoginState.dart';
 import 'package:test_task/AuthorizationPage/services/AuthService.dart';
-import 'package:test_task/assets/Constants.dart';
+import 'package:test_task/resources/Constants.dart';
 import 'bloc/login/LoginBloc.dart';
 
 class AuthPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset : false,
       backgroundColor: colorMain,
       body: BlocBuilder<AuthenticationBloc, AuthenticationState>(
         builder: (context, state) {
-          // ignore: close_sinks
           final authBloc = BlocProvider.of<AuthenticationBloc>(context);
           if (state is AuthenticationNotAuthenticated) {
             return _AuthForm();

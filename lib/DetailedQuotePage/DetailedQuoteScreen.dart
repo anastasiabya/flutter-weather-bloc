@@ -6,8 +6,8 @@ import 'package:test_task/DetailedQuotePage/bloc/DetailedQuoteBloc.dart';
 import 'package:test_task/DetailedQuotePage/bloc/DetailedQuoteEvent.dart';
 import 'package:test_task/DetailedQuotePage/bloc/DetailedQuoteState.dart';
 import 'package:test_task/DetailedQuotePage/models/Weather.dart';
-import 'package:test_task/assets/Constants.dart';
-import 'package:test_task/assets/UserSession.dart';
+import 'package:test_task/resources/Constants.dart';
+import 'package:test_task/resources/UserSession.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class DetailedQuotePage extends StatelessWidget {
