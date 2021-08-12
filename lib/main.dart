@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: FutureBuilder<Object>(
+      home: FutureBuilder<bool>(
           future: session,
           builder: (context, snapshot) {
             return BlocBuilder<AuthenticationBloc, AuthenticationState>(

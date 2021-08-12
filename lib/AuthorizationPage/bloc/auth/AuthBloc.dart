@@ -1,10 +1,10 @@
 import 'package:bloc/bloc.dart';
 import 'package:test_task/AuthorizationPage/services/AuthService.dart';
-
 import 'AuthEvent.dart';
 import 'AuthState.dart';
 
-class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> {
+class AuthenticationBloc
+    extends Bloc<AuthenticationEvent, AuthenticationState> {
   final AuthenticationService _authenticationService;
 
   AuthenticationBloc(AuthenticationService authenticationService)
@@ -13,7 +13,8 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> 
         super(AuthenticationInitial());
 
   @override
-  Stream<AuthenticationState> mapEventToState(AuthenticationEvent event) async* {
+  Stream<AuthenticationState> mapEventToState(
+      AuthenticationEvent event) async* {
     if (event is AppLoaded) {
       yield* _mapAppLoadedToState(event);
     }
@@ -42,11 +43,13 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> 
     }
   }
 
-  Stream<AuthenticationState> _mapUserLoggedInToState(UserLoggedIn event) async* {
+  Stream<AuthenticationState> _mapUserLoggedInToState(
+      UserLoggedIn event) async* {
     yield AuthenticationAuthenticated(user: event.user);
   }
 
-  Stream<AuthenticationState> _mapUserLoggedOutToState(UserLoggedOut event) async* {
+  Stream<AuthenticationState> _mapUserLoggedOutToState(
+      UserLoggedOut event) async* {
     await _authenticationService.signOut();
     yield AuthenticationNotAuthenticated();
   }
